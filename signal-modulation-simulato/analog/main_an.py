@@ -42,7 +42,7 @@ def graficar_señales(opcion_grafica, opcion_modulacion):
     elif opcion_modulacion == 'FM':
         _, señal_modulada = generar_señal_frecuencia_modulada(duracion, tasa_muestreo, fx, Ax, fc, Ac, indice_modulacion)
     elif opcion_modulacion == 'PM':
-        señal_modulada = generar_señal_fase_modulada(señal_base, señal_portadora, float(phase_deviation_entry.get()))
+        señal_modulada = generar_señal_fase_modulada(duracion, tasa_muestreo, Ax, fx, Ac, fc, indice_modulacion)
 
 
     # Graficar la señal
@@ -162,4 +162,3 @@ def mostrar_ocultar_parametros(event=None):
 modulation_choice.bind("<<ComboboxSelected>>", mostrar_ocultar_parametros)
 
 root.mainloop()
-
